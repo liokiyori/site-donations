@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Promesses de Dons</title>
+</head>
+<body>
+    <header>
+        <h1>Promesses de Dons</h1>
+        <a href="{{ url_for('index')}}" class="acceuil_bouton">accueil</a>
+        <a href="{{ url_for('donations')}}" class="acceuil_bouton">liste des donneurs</a>
+    </header>
+
+    <section class="main-content">
+        <table>
+            <tr>
+                <th>Nom</th>
+                <th>E-mail</th>
+                <th>Montant</th>
+            </tr>
+            {% for donation in donations %}
+            <tr>
+                <td>{{ donation[0] }}</td>
+                <td>{{ donation[1] }}</td>
+                <td>{{ donation[2] }}</td>
+            </tr>
+            {% endfor %}
+            <tr>
+                <td colspan="2">Total récolté :</td>
+                <td>{{ total_collected }}</td>
+            </tr>
+        </table>
+    </section>
+
+    <footer>
+        <p>pigeonland</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Pigeonland</title>
+</head>
+<body>
+    <header>
+        <h1>Association pour les pigeons handicapé de Brest</h1>
+        <p>Soutenez notre cause noble et permettez aux pigeons a une patte de se nourrir correctement</p>
+        <a href="{{ url_for('index')}}" class="acceuil_bouton">accueil</a>
+        <a href="{{ url_for('donations')}}" class="acceuil_bouton">liste des donneurs</a>
+    </header>
+
+    <section class="main-content">
+        <h2>Sauvez les pigeons</h2>
+        <p>Nous travaillons ardemment pour améliorer la vie des pigeons les plus vulnérables</p>
+        <a href="{{ url_for('donate') }}" class="donate-button">Donne aux pigeons</a>
+    </section>
+
+    <footer>
+        <p>pigeonland</p>
+    </footer>
+</body>
+</html>

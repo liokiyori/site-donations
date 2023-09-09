@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Fait un don radin</title>
+</head>
+<body>
+    <header>
+        <h1>Qui n'est pas radin fait un don hé ! en plus c'est déduit de tes impôts</h1>
+        <a href="{{ url_for('index')}}" class="acceuil_bouton">accueil</a>
+        <a href="{{ url_for('donations')}}" class="acceuil_bouton">liste des donneurs</a>
+    </header>
+
+    <section class="main-content">
+        <form method="POST" action="{{ url_for('donate') }}">
+            <label for="name">Nom :</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">E-mail :</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="amount">Montant :</label>
+            <input type="number" id="amount" name="amount" required>
+            
+            <label for="conditions">J'accepte de me faire pigeonner :</label>
+            <input type="checkbox" id="conditions" name="conditions" required>
+            
+            <button type="submit" class="donate-button">Faire une donation à une association pour les pigeons</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>Les pigeons domineront le monde ! Donner pour être épargné lors de leur règne</p>
+    </footer>
+</body>
+</html>
